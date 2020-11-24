@@ -15,8 +15,8 @@ $ git clone https://github.com/liaozter/Final-Project.git
 ```
 
 2. If you don't need to update the data and have the following files, then you can go to the next section and open the app.
-media_cache.json
-media.db
+    1. media_cache.json
+    2. media.db
 
 3. If you lose the file media_cache.json, then go to http://www.omdbapi.com/apikey.aspx and get API keys as instruction.
    Open the secret.py file and and fill in your API keys.
