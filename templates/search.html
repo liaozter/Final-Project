@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='html5reset.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+        <title>Book & Movie search</title>
+    </head>
+
+    <body class="chart_background parallax">
+    <h1>Book & Movie search</h1>
+    <p><strong><a href="/">Back</a></strong></p><br/>
+        <main>
+            <div class="options">
+                <form action="/search" method="POST">
+                    <div class="search_by">
+                        <p>
+                        What is the title of the movie or book? (Partial titles are also available)<input name="title" type="text"/><br/><br/><br/>
+                        </p>
+                    </div>
+
+                    <div class="search_button">
+                       <input id="search_button" type="submit" name="search" value="search"/>
+                        <br/>
+                    </div>
+                </form>
+            </div>
+            {% if media_list != [] %}
+            <table>
+              <tr>
+                <th>Type</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Summary</th>
+                <th>Rating</th>
+                <th>Genres</th>
+                <th>Bechdel Status</th>
+              </tr>
+              {% for list in media_list %}
+                {% if list[0] == "movie" %}
+                    <tr class="row movie">
+                {% endif %}
+                {% if list[0] == "book" %}
+                    <tr class="row book">
+                {% endif %}
+                {% for item in list %}
+                        <td class="item">{{item}}</td>
+                {% endfor %}
+                </tr>
+              {% endfor %}
+            </table>
+            {% else %}
+            <h2>No result in our database!</h2>
+            {% endif %}
+            <h1><a href="/">Back</a></h1>
+        </main>
+        <footer>
+            <p>Zitong Liao - 2020F</p>
+        </footer>
+	</body>
+</html>

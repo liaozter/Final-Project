@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='html5reset.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+        <title>Book & Movie sort</title>
+    </head>
+
+    <body class="chart_background parallax">
+    <h1>Book & Movie sort</h1>
+    <p><strong><a href="/">Back</a></strong></p><br/>
+        <main>
+            <div class="options">
+                <form action="/chart" method="POST">
+                    <div class="sort_by">
+                        Sort By: <br/>
+                        <select name='sortby'>
+                            <option value='type'>Type</option>
+                            <option value='title'>Title</option>
+                            <option value='author'>Author</option>
+                            <option value='status'>Bechdel Status</option>
+                        </select>
+                    </div>
+
+                    <div class="sort_order">
+                        Sort Order: (Ascending by default)<br/>
+                        <input type="radio" name="sortorder" value="asc"/> Ascending
+                        <input type="radio" name="sortorder" value="desc"/> Descending
+                        <br/>
+                    </div>
+                    <div class="sort_button">
+                       <input id="update_button" type="submit" name="update" value="Update"/>
+                        <br/>
+                    </div>
+                </form>
+            </div>
+
+            <table>
+              <tr>
+                <th>Type</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Summary</th>
+                <th>Rating</th>
+                <th>Genres</th>
+                <th>Bechdel Status</th>
+              </tr>
+              {% for list in media_list %}
+                {% if list[0] == "movie" %}
+                    <tr class="row movie">
+                {% endif %}
+                {% if list[0] == "book" %}
+                    <tr class="row book">
+                {% endif %}
+                {% for item in list %}
+                        <td class="item">{{item}}</td>
+                {% endfor %}
+                </tr>
+              {% endfor %}
+            </table>
+            <h1><a href="/">Back</a></h1>
+        </main>
+        <footer>
+            <p>Zitong Liao - 2020F</p>
+        </footer>
+	</body>
+</html>
