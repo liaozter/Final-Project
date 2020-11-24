@@ -1,1 +1,1 @@
-OMDB_API_KEY = '101b3f9'
+OMDB_API_KEY = 'Your API key'
