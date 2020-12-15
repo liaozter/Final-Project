@@ -14,7 +14,7 @@ Please follow these steps:
 $ git clone https://github.com/liaozter/Final-Project.git
 ```
 
-2. If you don't need to update the data and have the following files, then you can go to the next section and open the app.
+2. The construction of the database takes quite a few minutes according to the network speed. Therefore, for the convenience of grading, I provide a full database and cache files. If you don't need to update the data and have the following files, then you can go to the next section and open the app.
     1. media_cache.json
     2. media.db
 
