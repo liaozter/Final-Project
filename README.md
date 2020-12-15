@@ -22,7 +22,7 @@ $ git clone https://github.com/liaozter/Final-Project.git
     1. media_cache.json
     2. media.db
 
-3. If you lose the file media_cache.json, then go to http://www.omdbapi.com/apikey.aspx and get API keys as instruction.
+3. If you lose the file media_cache.json, then go to http://www.omdbapi.com/apikey.aspx and get API keys as instruction. I provide my API KEY in the Final Project Submission on CANVAS.
    Open the secret.py file and and fill in your API keys.
    Run final_project_setup.py by :
 ```
