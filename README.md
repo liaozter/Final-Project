@@ -5,6 +5,10 @@ A software to see if your favorite movie has a book of the same name and if it p
 
 Python3, Flask, sqlite3, requests
 
+### Demo video
+
+https://drive.google.com/file/d/1cjZx5buMjKwDghbyuay_LKn4g7dwCi2a/view?usp=sharing
+
 ### Configure the project
 
 Please follow these steps:
